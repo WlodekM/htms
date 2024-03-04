@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HTMS - Demos</title>
+    <include@www/templates/style.htms />
+</head>
+<body>
+    <include@www/templates/topbar.htms />
+    <main>
+        <pre id="jaja">
+            <include@sLib />
+        </pre>
+        <script>
+            s.getElement(".sLib").then((sLib)=>{
+                s.getElement("#jaja").then((jaja)=>{
+                    jaja.innerText = sLib.innerHTML
+                })
+            })
+        </script>
+    </main>
+</body>

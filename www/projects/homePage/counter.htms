@@ -1,0 +1,33 @@
+<ss>
+    let count = Number(s.fs.readFileSync("www/projects/homePage/visitors.txt")) + 1
+    console.log(String(count))
+    s.fs.writeFileSync("www/projects/homePage/visitors.txt", String(count))
+    let postfix = "th"
+    if (String(count).endsWith("1")) {
+        console.log(`${String(count)} ends with 1`)
+        postfix = "st"
+    }
+    if (String(count).endsWith("2")) {
+        console.log(`${String(count)} ends with 2`)
+        postfix = "nd"
+    }
+    if (String(count).endsWith("3")) {
+        console.log(`${String(count)} ends with 3`)
+        postfix = "rd"
+    }
+    if (String(count).endsWith("11")) {
+        console.log(`${String(count)} ends with 11`)
+        postfix = "th"
+    }
+    if (String(count).endsWith("12")) {
+        console.log(`${String(count)} ends with 12`)
+        postfix = "th"
+    }
+    if (String(count).endsWith("13")) {
+        console.log(`${String(count)} ends with 13`)
+        postfix = "th"
+    }
+    let result = `${count}${postfix}`
+    console.log(result)
+    result
+</ss>

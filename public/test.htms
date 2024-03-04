@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMS - Counter demo</title>
+    <include@sLib />
+    <include@www/templates/style.htms />
+    <script>
+        s.addEventListener("#add", "click", (async (e) => {
+            await e.preventDefault()
+            let res = await fetch('/<#counterAdd>')
+            if (res.ok) {
+                let text = await res.text()
+                let count = await s.getElement("#count")
+                console.log(text)
+                count.innerText = text
+            }
+        }))
+        s.addEventListener("#subtract", "click", (async (e) => {
+            await e.preventDefault()
+            let res = await fetch('/<#counterSubtract>')
+            if (res.ok) {
+                let text = await res.text()
+                let count = await s.getElement("#count")
+                console.log(text)
+                count.innerText = text
+            }
+        }))
+    </script>
+</head>
+
+<body>
+    <include@www/templates/topbar.htms />
+    <main>
+        <h1>HTMS - Counter demo</h1>
+        <p>The count is kept on the server so if you reload it won't reset</p>
+        <hr>
+        <span style="font-size: 1.5em;">
+            <button id="subtract" style="cursor: pointer;">-</button>
+            <span id="count">
+                <ss>
+                    if(!s.vars.count) {
+                        s.vars.count = 0
+                    }
+                    s.vars.count ?? "no count"
+                </ss>
+            </span>
+            <button id="add" style="cursor: pointer;">+</button>
+        </span>
+        <api path="counterAdd">
+            s.vars.count += 1
+        </api>
+        <api path="counterSubtract">
+            s.vars.count -= 1
+        </api>
+        <hr>
+    </main>
+</body>
+
+</html>

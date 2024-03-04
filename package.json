@@ -1,0 +1,18 @@
+{
+  "name": "xhtml",
+  "version": "1.0.0",
+  "description": "Html templates",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WlodekM",
+  "license": "MIT",
+  "dependencies": {
+    "escape-string-regexp": "^5.0.0",
+    "express": "^4.18.2",
+    "node-html-parser": "^6.1.12",
+    "simple-json-db": "^2.0.0"
+  }
+}

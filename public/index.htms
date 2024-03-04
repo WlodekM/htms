@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HTMS - Draft v0.4</title>
+    <include@www/templates/style.htms />
+</head>
+<body>
+    <include@www/templates/topbar.htms />
+    <main>
+        <h2 style="margin: 0;margin-bottom: 0.2em;">Hello world!</h2>
+        You are our
+        <!-- User counter code (Node.js) -->
+        <include@www/projects/homePage/counter.htms />
+        visitor
+        <br>
+        HTMS is a PHP-like programming language based on node.js used for executing server-side code in your html files
+        <br>
+        Right now its very WIP so no docs
+        <br>
+        <h3 style="margin: 0;margin-bottom: 0.2em;">
+            Short guide (v0.4)
+        </h3>
+        <ul>
+            <li>
+                <code>&lt;ss&gt;{a}&lt;ss&gt;</code> - write nodejs code in {a} and it'll be executed
+            </li>
+            <li>
+                <code>&lt;include@{a} /&gt;</code> - include an another htms file, {a} is the path to the file that you want to include, can also be <code>sLib</code> if you want to include the standard client library
+            </li>
+            <li>
+                <code>&lt;api path="{a}"&gt;{b}&lt;/api&gt;</code> - create an api endpoint to execute server-side code on command, {a} is the endpoint and {b} is the nodejs code
+            </li>
+            <li>
+                <code>&lt;#{a}&gt;</code> - get full endpoint path from endpoint name
+            </li>
+            <li>
+                <code>&lt;@PATH&gt;</code> - get current path
+            </li>
+            <li>
+                <code>&lt;@DATE&gt;</code> - get current date
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

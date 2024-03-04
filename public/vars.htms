@@ -1,0 +1,53 @@
+<!-- <ss>
+    let mapped = Object.keys(s.vars).map((a, i) => {
+        return `${a}: ${s.vars[a]}`
+    })
+    mapped.join("<br>")
+</ss> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HTMS - Draft v0.4</title>
+    <include@www/templates/style.htms />
+</head>
+<body>
+    <include@www/templates/topbar.htms />
+    <main>
+
+        <h1 style="margin: 0;">
+            Global S object debugger
+        </h1>
+        <p>
+            (This is for the server object btw)
+        </p>
+
+        <a href="/lib.htms">Standard library</a>
+
+        <ss>
+            let result = ""
+            Object.keys(s).forEach((a, i) => {
+                result += `<details>\n<summary>`
+                result += `<span style="font-size: 2em">${a.replaceAll("<\!--", "< !--")}</span>`
+                result += `</summary>`
+                Object.keys(s[a]).forEach((aa, i) => {
+                    result += `<details>\n<summary><span style="font-size: 1.5em">${aa.replaceAll("<\!--", "< !--")}</span></summary>`
+                    if (typeof s[a][aa] == "object") {
+                        try {
+                            result += (`${JSON.stringify(s[a][aa])}\n<br>\n`).replaceAll("<\!--", "< !--")
+                        } catch(e) {
+                            result += (`Cannot convert to JSON\n<br>Object keys: ${Object.keys(s[a][aa]).join(", ")}\n<br>\n`).replaceAll("<\!--", "< !--")
+                        }
+                    } else {
+                        result += String(s[a][aa]).replaceAll("<\!--", "< !--")
+                    }
+                    result += `\n</details>`
+                })
+                result += `</details>`
+            })
+            result
+        </ss>
+    </main>
+</body>

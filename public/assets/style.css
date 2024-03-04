@@ -1,0 +1,41 @@
+:root {
+    --bg: #000;
+    --fg: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    margin: 0;
+}
+
+main {
+    padding: 5px;
+}
+
+input, button, textarea, code {
+    color: var(--fg);
+}
+
+a {
+    color: var(--fg);
+    text-decoration: underline;
+}
+
+textarea, code, pre, button {
+    border: none;
+    background: #fff3;
+    border-radius: 3px;
+}
+
+pre {
+    padding: 5px;
+    width: fit-content;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    color: var(--fg);
+}

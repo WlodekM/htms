@@ -1,0 +1,31 @@
+<div class="topbar">
+    <div class="logo">
+        HTMS
+    </div>
+    <div class="links">
+        <a href="/">Home</a>
+        <a href="/demos">Demos</a>
+        <a href="/vars.htms">Debug</a>
+    </div>
+</div>
+
+<style>
+    .topbar {
+        box-sizing: border-box;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: #fff3;
+    }
+    .logo {
+        font-weight: bold;
+        font-size: 2em;
+    }
+    .links {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+</style>
